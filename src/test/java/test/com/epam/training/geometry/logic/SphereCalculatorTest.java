@@ -121,4 +121,31 @@ public class SphereCalculatorTest {
 
         Assert.assertEquals(1, actual, EPS);
     }
+
+    @Test
+    public void testIsCorrectSphereShouldReturnTrueWhenPositiveRadiusApplied() {
+        Sphere sphere = new Sphere(3.3);
+
+        boolean actual = sphereCalculator.isCorrectSphere(sphere);
+
+        Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void testIsCorrectSphereShouldReturnFalseWhenNegativeRadiusApplied() {
+        Sphere sphere = new Sphere(-3.3);
+
+        boolean actual = sphereCalculator.isCorrectSphere(sphere);
+
+        Assert.assertFalse(actual);
+    }
+
+    @Test
+    public void testIsCorrectSphereShouldReturnFalseWhenZeroRadiusApplied() {
+        Sphere sphere = new Sphere(0);
+
+        boolean actual = sphereCalculator.isCorrectSphere(sphere);
+
+        Assert.assertFalse(actual);
+    }
 }

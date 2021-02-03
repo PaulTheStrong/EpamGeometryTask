@@ -57,4 +57,8 @@ public class SphereCalculator {
         double sphereVolume = calculateVolume(sphere);
         return segmentVolume / (sphereVolume - segmentVolume);
     }
+
+    public boolean isCorrectSphere(Sphere sphere) {
+        return sphere.getRadius() > 0;
+    }
 }
