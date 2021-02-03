@@ -25,8 +25,12 @@ public class Sphere {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Sphere sphere = (Sphere) o;
         return Double.compare(sphere.radius, radius) == 0 &&
                 center.equals(sphere.center);
