@@ -3,15 +3,30 @@ package com.epam.training.geomety.entities;
 import java.util.Objects;
 
 public class Sphere {
-    private final Point3D center;
-    private final double radius;
+    private Point3D center;
+    private double radius;
+    private final int id = ++sphereCounter;
+
+    private static int sphereCounter = 0;
 
     public Point3D getCenter() {
         return center;
     }
 
+    public void setCenter(Point3D center) {
+        this.center = center;
+    }
+
     public double getRadius() {
         return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Sphere(Point3D center, double radius) {

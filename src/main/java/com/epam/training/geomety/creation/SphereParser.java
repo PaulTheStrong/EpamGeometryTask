@@ -3,9 +3,6 @@ package com.epam.training.geomety.creation;
 import com.epam.training.geomety.entities.Point3D;
 import com.epam.training.geomety.entities.Sphere;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class SphereParser {
 
     public Sphere parse(String data) {
