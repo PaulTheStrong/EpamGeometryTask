@@ -18,6 +18,12 @@ public class SphereRepository implements Repository {
         }
     }
 
+    public void addSpheres(List<Sphere> sphereList) {
+        for (Sphere sphere : sphereList) {
+            addSphere(sphere);
+        }
+    }
+
     @Override
     public void removeSphere(Sphere sphere) {
         spheresData.remove(sphere);

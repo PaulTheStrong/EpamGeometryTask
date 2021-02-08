@@ -72,7 +72,9 @@ public class SphereCalculator {
         double x = center.getX();
         double y = center.getY();
         double z = center.getZ();
-        return Math.hypot(Math.hypot(x, y), z);
+        double distance = Math.hypot(Math.hypot(x, y), z);
+        LOGGER.debug("Calculated distance: " + distance);
+        return distance;
     }
 
     public boolean isCorrectSphere(Sphere sphere) {

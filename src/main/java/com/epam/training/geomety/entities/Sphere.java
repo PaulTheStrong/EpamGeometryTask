@@ -1,13 +1,15 @@
 package com.epam.training.geomety.entities;
 
+import com.epam.training.geomety.generators.IdGenerator;
+
 import java.util.Objects;
 
 public class Sphere {
+
     private Point3D center;
     private double radius;
-    private final int id = ++sphereCounter;
-
-    private static int sphereCounter = 0;
+    private final int id;
+    private static final IdGenerator idGenerator = new IdGenerator();
 
     public Point3D getCenter() {
         return center;
@@ -32,6 +34,7 @@ public class Sphere {
     public Sphere(Point3D center, double radius) {
         this.center = center;
         this.radius = radius;
+        this.id = idGenerator.nextId();
     }
 
     public Sphere(double radius) {
