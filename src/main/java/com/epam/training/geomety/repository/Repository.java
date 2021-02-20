@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface Repository {
 
-    void addSphere(Sphere sphere);
-    void removeSphere(Sphere sphere);
-    void updateSphere(Sphere sphere);
+    void add(Sphere sphere);
+    void remove(Sphere sphere);
+    void update(Sphere sphere);
 
     List<Sphere> query(SphereQuerySpecification sphereSpecification);
     List<Sphere> query(SphereQuerySpecification sphereQuerySpecification, Comparator<Sphere> sphereComparator);

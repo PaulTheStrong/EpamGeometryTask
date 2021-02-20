@@ -12,7 +12,7 @@ public class SphereRepository implements Repository {
     private final List<Sphere> spheresData = new LinkedList<>();
 
     @Override
-    public void addSphere(Sphere sphere) {
+    public void add(Sphere sphere) {
         if (!spheresData.contains(sphere)) {
             spheresData.add(sphere);
         }
@@ -20,17 +20,17 @@ public class SphereRepository implements Repository {
 
     public void addSpheres(List<Sphere> sphereList) {
         for (Sphere sphere : sphereList) {
-            addSphere(sphere);
+            add(sphere);
         }
     }
 
     @Override
-    public void removeSphere(Sphere sphere) {
+    public void remove(Sphere sphere) {
         spheresData.remove(sphere);
     }
 
     @Override
-    public void updateSphere(Sphere sphere) {
+    public void update(Sphere sphere) {
 
     }
 

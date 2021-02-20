@@ -10,12 +10,12 @@ public class SphereObservable extends Sphere implements Observable {
 
     List<Observer> sphereObservers = new ArrayList<>();
 
-    public SphereObservable(Point3D center, double radius) {
-        super(center, radius);
+    public SphereObservable(int id, Point3D center, double radius) {
+        super(id, center, radius);
     }
 
-    public SphereObservable(double radius) {
-        super(radius);
+    public SphereObservable(int id, double radius) {
+        super(id, radius);
     }
 
     @Override

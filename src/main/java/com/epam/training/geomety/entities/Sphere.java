@@ -9,7 +9,6 @@ public class Sphere {
     private Point3D center;
     private double radius;
     private final int id;
-    private static final IdGenerator idGenerator = new IdGenerator();
 
     public Point3D getCenter() {
         return center;
@@ -31,14 +30,14 @@ public class Sphere {
         return id;
     }
 
-    public Sphere(Point3D center, double radius) {
+    public Sphere(int id, Point3D center, double radius) {
         this.center = center;
         this.radius = radius;
-        this.id = idGenerator.nextId();
+        this.id = id;
     }
 
-    public Sphere(double radius) {
-        this(new Point3D(0, 0, 0), radius);
+    public Sphere(int id, double radius) {
+        this(id, new Point3D(0, 0, 0), radius);
     }
 
     @Override

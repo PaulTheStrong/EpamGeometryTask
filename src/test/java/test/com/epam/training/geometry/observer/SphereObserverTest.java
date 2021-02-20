@@ -18,8 +18,8 @@ import static org.mockito.Mockito.when;
 
 public class SphereObserverTest {
 
-    private static final SphereObservable FIRST_SPHERE = new SphereObservable(3);
-    private static final SphereObservable SECOND_SPHERE = new SphereObservable(4);
+    private static final SphereObservable FIRST_SPHERE = new SphereObservable(1, 3);
+    private static final SphereObservable SECOND_SPHERE = new SphereObservable(2, 4);
 
     private static SphereCalculator calculator = Mockito.mock(SphereCalculator.class);
 
@@ -51,10 +51,7 @@ public class SphereObserverTest {
         updateMockCalculatorValues(SECOND_SPHERE, 5);
         SECOND_SPHERE.setRadius(5);
 
-        Map<Integer, SphereParameters> actualMap = sphereObserver.getObservableSpheres();
-        Collection<SphereParameters> actualValues = actualMap.values();
-        SphereParameters[] actualArray = new SphereParameters[actualValues.size()];
-        actualValues.toArray(actualArray);
+        SphereParameters[] actualArray = new SphereParameters[] {sphereObserver.getParametersById(1), sphereObserver.getParametersById(2)};
 
         SphereParameters[] expected = {
                 new SphereParameters(calculator.calculateArea(FIRST_SPHERE), calculator.calculateVolume(FIRST_SPHERE)),
@@ -85,10 +82,7 @@ public class SphereObserverTest {
         updateMockCalculatorValues(FIRST_SPHERE, 4);
         FIRST_SPHERE.setRadius(4);
 
-        Map<Integer, SphereParameters> actualMap = sphereObserver.getObservableSpheres();
-        Collection<SphereParameters> actualValues = actualMap.values();
-        SphereParameters[] actualArray = new SphereParameters[actualValues.size()];
-        actualValues.toArray(actualArray);
+        SphereParameters[] actualArray = new SphereParameters[] {sphereObserver.getParametersById(1), sphereObserver.getParametersById(2)};
 
         //then
         Assert.assertArrayEquals(expected, actualArray);

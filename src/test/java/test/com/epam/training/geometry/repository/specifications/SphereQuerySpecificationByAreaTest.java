@@ -17,12 +17,11 @@ public class SphereQuerySpecificationByAreaTest extends SphereQuerySpecification
 
     @Override
     protected Sphere getSpecifiedSphere() {
-        return new Sphere(1);
+        return new Sphere(1, 1);
     }
 
     @Override
     protected Sphere getNonSpecifiedSphere() {
-        new Sphere(2);
-        return new Sphere(new Point3D(3, 2, 2), 10);
+        return new Sphere(2, new Point3D(3, 2, 2), 10);
     }
 }

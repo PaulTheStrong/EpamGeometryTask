@@ -14,7 +14,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testCalculateAreaWhenIntegerRadiusApplied() {
-        Sphere sphere = new Sphere(3);
+        Sphere sphere = new Sphere(1, 3);
         double expectedArea = Math.PI * 4 * 9;
 
         double actualArea = sphereCalculator.calculateArea(sphere);
@@ -24,7 +24,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testCalculateAreaShouldReturnZeroWhenZeroRadiusApplied() {
-        Sphere sphere = new Sphere(0);
+        Sphere sphere = new Sphere(1, 0);
 
         double actualArea = sphereCalculator.calculateArea(sphere);
 
@@ -33,7 +33,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testCalculateAreaWhenDoubleRadiusApplied() {
-        Sphere sphere = new Sphere(2.5);
+        Sphere sphere = new Sphere(1, 2.5);
         double expectedArea = Math.PI * 4 * Math.pow(2.5, 2);
 
         double actualArea = sphereCalculator.calculateArea(sphere);
@@ -43,7 +43,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testCalculateVolumeWhenIntegerRadiusApplied() {
-        Sphere sphere = new Sphere(3);
+        Sphere sphere = new Sphere(1, 3);
         double expectedVolume = Math.PI * 4 * 27 / 3;
 
         double actualVolume = sphereCalculator.calculateVolume(sphere);
@@ -53,7 +53,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testCalculateVolumeWhenDoubleRadiusApplied() {
-        Sphere sphere = new Sphere(3.1324);
+        Sphere sphere = new Sphere(1, 3.1324);
         double expectedVolume = Math.PI * 4 * Math.pow(3.1324, 3) / 3;
 
         double actualVolume = sphereCalculator.calculateVolume(sphere);
@@ -64,7 +64,7 @@ public class SphereCalculatorTest {
     @Test
     public void testTouchesAnyPlaneShouldReturnFalseWhenDoesntTouchAny() {
         Point3D center = new Point3D(5, 5, 5);
-        Sphere sphere = new Sphere(center, 3);
+        Sphere sphere = new Sphere(1, center, 3);
 
         boolean actual = sphereCalculator.touchesAnyPlane(sphere);
 
@@ -74,7 +74,7 @@ public class SphereCalculatorTest {
     @Test
     public void testTouchesAnyPlaneShouldReturnFalseWhenTouchesAllPlanes() {
         Point3D center = new Point3D(5, 5, -5);
-        Sphere sphere = new Sphere(center, 5);
+        Sphere sphere = new Sphere(1, center, 5);
 
         boolean actual = sphereCalculator.touchesAnyPlane(sphere);
 
@@ -84,7 +84,7 @@ public class SphereCalculatorTest {
     @Test
     public void testTouchesAnyPlaneShouldReturnFalseWhenTouchesOne() {
         Point3D center = new Point3D(5.2, 5.2, -5);
-        Sphere sphere = new Sphere(center, 5);
+        Sphere sphere = new Sphere(1, center, 5);
 
         boolean actual = sphereCalculator.touchesAnyPlane(sphere);
 
@@ -93,7 +93,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testGetCutRatioShouldReturnOneWhenSphereInTheCenter() {
-        Sphere sphere = new Sphere(3.3);
+        Sphere sphere = new Sphere(1, 3.3);
 
         double actual = sphereCalculator.getCutRatio(sphere, Plane.OXY);
 
@@ -102,7 +102,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testGetCutRatioShouldReturnCutRationWhenSphereNotOnTheMiddleOfPlane() {
-        Sphere sphere = new Sphere(new Point3D(-2.3), 3.3);
+        Sphere sphere = new Sphere(1, new Point3D(-2.3), 3.3);
         double volume = 4 * Math.PI * Math.pow(3.3, 3) / 3;
         double height = 1;
         double segmentVolume = Math.PI * (3.3 - 1 / 3.);
@@ -115,7 +115,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testGetCutRatioShouldReturnCutRationWhenSphereNotOnMiddleOfPlane() {
-        Sphere sphere = new Sphere(new Point3D(-2.3), 3.3);
+        Sphere sphere = new Sphere(1, new Point3D(-2.3), 3.3);
 
         double actual = sphereCalculator.getCutRatio(sphere, Plane.OXZ);
 
@@ -124,7 +124,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testIsCorrectSphereShouldReturnTrueWhenPositiveRadiusApplied() {
-        Sphere sphere = new Sphere(3.3);
+        Sphere sphere = new Sphere(1, 3.3);
 
         boolean actual = sphereCalculator.isCorrectSphere(sphere);
 
@@ -133,7 +133,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testIsCorrectSphereShouldReturnFalseWhenNegativeRadiusApplied() {
-        Sphere sphere = new Sphere(-3.3);
+        Sphere sphere = new Sphere(1, -3.3);
 
         boolean actual = sphereCalculator.isCorrectSphere(sphere);
 
@@ -142,7 +142,7 @@ public class SphereCalculatorTest {
 
     @Test
     public void testIsCorrectSphereShouldReturnFalseWhenZeroRadiusApplied() {
-        Sphere sphere = new Sphere(0);
+        Sphere sphere = new Sphere(1, 0);
 
         boolean actual = sphereCalculator.isCorrectSphere(sphere);
 

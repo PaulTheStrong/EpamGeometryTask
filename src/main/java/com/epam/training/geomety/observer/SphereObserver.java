@@ -24,8 +24,8 @@ public class SphereObserver implements Observer {
         return INSTANCE;
     }
 
-    public Map<Integer, SphereParameters> getObservableSpheres() {
-        return observableSpheres;
+    public SphereParameters getParametersById(int id) {
+        return observableSpheres.get(id);
     }
 
     @Override

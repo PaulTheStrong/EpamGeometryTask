@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SphereParserTest {
 
-    SphereParser parser = new SphereParser();
+    private final SphereParser parser = new SphereParser();
 
     @Test
     public void testParseShouldReturnSphereWhenValidStringApplied() {
@@ -18,7 +18,7 @@ public class SphereParserTest {
 
         Sphere actualSphere = parser.parse(validLine);
 
-        Assert.assertEquals(new Sphere(new Point3D(3.2, -5.3, 1.223), 4.5), actualSphere);
+        Assert.assertEquals(new Sphere(1, new Point3D(3.2, -5.3, 1.223), 4.5), actualSphere);
     }
 
     @Test
@@ -27,6 +27,6 @@ public class SphereParserTest {
 
         Sphere actualSphere = parser.parse(validLine);
 
-        Assert.assertNotEquals(new Sphere(new Point3D(3.2, 5.3, 1.223), 4.5), actualSphere);
+        Assert.assertNotEquals(new Sphere(1, new Point3D(3.2, 5.3, 1.223), 4.5), actualSphere);
     }
 }

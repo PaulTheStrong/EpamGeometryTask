@@ -14,11 +14,11 @@ public class SortSphereByXAscComparatorTest extends SortSphereComparatorTest {
 
     @Override
     protected Sphere getGreaterSphere() {
-        return new Sphere(new Point3D(3, 1, 2), 2);
+        return new Sphere(1, new Point3D(3, 1, 2), 2);
     }
 
     @Override
     protected Sphere getSmallerSphere() {
-        return new Sphere(new Point3D(1, 1, 2), 2);
+        return new Sphere(2, new Point3D(1, 1, 2), 2);
     }
 }

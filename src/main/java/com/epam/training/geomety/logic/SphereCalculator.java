@@ -4,10 +4,10 @@ import com.epam.training.geomety.entities.Plane;
 import com.epam.training.geomety.entities.Point3D;
 import com.epam.training.geomety.entities.Sphere;
 import org.apache.log4j.Logger;
+import static java.lang.Math.PI;
 
 public class SphereCalculator {
     private static final Logger LOGGER = Logger.getRootLogger();
-    private static final double PI = Math.PI;
     private static final double EPS = 0.000001;
 
     public double calculateArea(Sphere sphere) {
